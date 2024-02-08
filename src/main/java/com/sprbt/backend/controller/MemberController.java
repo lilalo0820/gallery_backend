@@ -18,6 +18,7 @@ public class MemberController {
     public int login(@RequestBody Map<String,String> params){
         Member member = memberRepository.findByEmailAndPassword(params.get("email"),params.get("password"));
 
+
         int result = 0;
         if(member != null){
             result = member.getId();
